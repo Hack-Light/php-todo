@@ -22,6 +22,7 @@ pipeline {
              sh 'mv .env.sample .env'
              
              sh 'composer install'
+             sh 'php artisan config:clear'
              sh 'php artisan migrate'
              sh 'php artisan db:seed'
              sh 'php artisan key:generate'
